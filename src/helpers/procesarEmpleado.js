@@ -4,16 +4,16 @@ import axios from 'axios'
 
 
 
-const obtenerEmpleado = async (id) => {
+export const obtenerEmpleado = async (id) => {
     return await obtenerEmpleadoAxios(id);
 }
-const insertarEmpleado = async (body) => {
+export const insertarEmpleado = async (body) => {
     return await insertarEmpleadosAxios(body); 
 }
-const actualizarEmpleado = async (body) => {
+export const actualizarEmpleado = async (body) => {
     return await actualizarEmpleadoAxios(body);
 }
-const borrarEmpleado = async (id) => {
+export const borrarEmpleado = async (id) => {
     return await borrarEmpleadoAxios(id); 
 }
 
@@ -47,7 +47,7 @@ const actualizarEmpleadoAxios = async(body) =>{
     return data 
 }
 //DELETE 
-const borrarEmpleadoAxios = async() =>{
+const borrarEmpleadoAxios = async(id) =>{
     const data = axios.delete(`http://localhost:8085/API/Nomina/V1/empleados/${id}`).then(r => r.data)
     console.log(data)
     return data
